@@ -1,3 +1,19 @@
+<?php 
+
+require 'connect/db.php';
+
+if(isset($_POST['first_name']) && !empty($_POST['first_name'])){
+     
+}
+
+?>
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 

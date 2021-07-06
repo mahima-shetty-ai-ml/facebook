@@ -1,0 +1,13 @@
+CREATE TABLE users(
+	user_id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    first_name varchar(255) NOT NULL,
+    last_name varchar(255) NOT NULL,
+    screenName varchar(255) NOT NULL,
+    userLink text NOT NULL,
+    email varchar(255) DEFAULT NULL,
+    mobile varchar(255) DEFAULT NULL,
+    PASSWORD varchar(255) NOT NULL,
+    birthday date DEFAULT NULL,
+    gender varchar(255) DEFAULT NULL
+    
+) ENGINE = INNODB DEFAULT CHARSET=latin1;

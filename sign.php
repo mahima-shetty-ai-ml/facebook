@@ -1,9 +1,30 @@
-<?php 
+<?php
 
 require 'connect/db.php';
+// $error = '';
 
-if(isset($_POST['first_name']) && !empty($_POST['first_name'])){
-     
+if (isset($_POST['first-name']) && !empty($_POST['first-name'])) {
+    $upFirst = $_POST['first-name'];
+    $upLast  = $_POST['last-name'];
+    $upEmailMobile = $_POST['email-mobile'];
+    $upPassword = $_POST['up-password'];
+    $birthDay = $_POST['birth-day'];
+    $birthMonth = $_POST['birth-month'];
+    $birthYear = $_POST['birth-year'];
+
+    if(!empty($_POST['gen'])){
+        $upgen = $_POST['gen'];          
+    }
+
+    $birth = '' . $birthYear . '-' . $birthMonth . '-' . $birthDay . '';
+
+    //  echo $birth;
+
+    if (empty($upFirst) or empty($upLast) or empty($upEmailMobile) or empty($upgen)) {
+        $error = 'All fields are required';
+    }
+} else {
+    echo 'User Not found';
 }
 
 ?>
@@ -32,7 +53,13 @@ if(isset($_POST['first_name']) && !empty($_POST['first_name'])){
             <img src="assets/image/facebook Signin image.png" alt="">
         </div>
         <div class="right-side">
-            <div class="error"></div>
+            <div class="error">
+                <?php
+                if (!empty($error)) {
+                    echo $error;
+                }
+                ?>
+            </div>
             <h1 style="color: #212121;">Create an Account</h1>
             <div style="color: #212121; font-size: 20px">It's free and always will be</div>
 

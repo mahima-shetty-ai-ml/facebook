@@ -23,11 +23,25 @@ if (isset($_POST['first-name']) && !empty($_POST['first-name'])) {
 
     if (empty($upFirst) or empty($upLast) or empty($upEmailMobile) or empty($upgen)) {
         $error = 'All fields are required';
+    }else{
+        $first_name = $loadFromUser->checkInput($upFirst);
+        $last_name = $loadFromUser->checkInput($upLast);
+        $email_mobile = $loadFromUser->checkInput($upEmailMobile);
+        $password = $loadFromUser->checkInput($upPassword);
+        $screenName = ''.$first_name.'_'.$last_name.'';
+
+        if(DB::query('SELECT screenName FROM users WHERE screenName =:screenName', array(':screenName' => $screenName ))){
+            $screenRand = rand();
+            $$userLink = ''.$screenName.''.$screenRand.'';
+        }else{
+            $userLink = $screenName;
+        }
+        // $first_name = $loadFromUser->checkInput($upFirst);
     }
 }
-// else {
-//     echo 'User Not found';
-// }
+else {
+    echo 'User Not found';
+}
 
 ?>
 

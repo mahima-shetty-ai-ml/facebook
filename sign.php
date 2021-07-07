@@ -1,6 +1,6 @@
 <?php
-
-require 'connect/db.php';
+require 'core/database/connection.php';
+// require 'connect/db.php';
 // $error = '';
 
 if (isset($_POST['first-name']) && !empty($_POST['first-name'])) {
@@ -23,9 +23,10 @@ if (isset($_POST['first-name']) && !empty($_POST['first-name'])) {
     if (empty($upFirst) or empty($upLast) or empty($upEmailMobile) or empty($upgen)) {
         $error = 'All fields are required';
     }
-} else {
-    echo 'User Not found';
 }
+// else {
+//     echo 'User Not found';
+// }
 
 ?>
 

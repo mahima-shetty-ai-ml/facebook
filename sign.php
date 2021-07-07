@@ -1,5 +1,6 @@
 <?php
-require 'core/database/connection.php';
+require 'core/load.php';
+// require 'core/database/connection.php';
 // require 'connect/db.php';
 // $error = '';
 
